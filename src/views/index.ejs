@@ -1,4 +1,32 @@
-<%- include("includes/head") %>
-<%- include("includes/nav") %>
-<h1>Hello World!</h1>
+<%- include("includes/head") %> <%- include("includes/nav") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-4">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Seus contatos estão abaixo</p>
+
+      <div class="row">
+        <div class="col my-3">
+          <div class="alert-danger">Um erro qualquer</div>
+        </div>
+      </div>
+
+      <div class="responsive-table">
+        <table class="table">
+          <tr>
+            <td>Hayat</td>
+            <td>Zimerman</td>
+            <td>99999-9999</td>
+            <td>admin@demo.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
 <%- include("includes/footer") %>
