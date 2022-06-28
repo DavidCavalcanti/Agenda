@@ -3,7 +3,8 @@ exports.index = (req, res) => {
   res.render("login");
 };
 
-exports.register = (req, res) => {
+exports.register = async (req, res) => {
   const login = new Login(req.body);
-  res.send(login.body);
+  await login.register();
+  res.send(login.erros);
 };
