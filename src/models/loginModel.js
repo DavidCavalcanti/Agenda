@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 //modelagem dos dados
 const LoginSchema = new mongoose.Schema({
@@ -15,7 +16,7 @@ class Login {
     this.erros = [];
     this.user = null;
   }
-
+  
   register() {
     this.valida();
   }
