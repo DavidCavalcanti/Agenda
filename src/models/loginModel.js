@@ -12,6 +12,7 @@ const LoginModel = mongoose.model("Login", LoginSchema); // cria um model por no
 class Login {
   constructor(body){
     this.body = body;
+    this.erros = [];    
   }
 }
 
