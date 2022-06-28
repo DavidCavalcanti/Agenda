@@ -40,6 +40,21 @@ class Login {
       );
     }
   }
+
+  CleanUp() {
+    // Este for limpa os dados do body
+    for (const key in this.body) {
+      if (typeof this.body[key] !== "string") {
+        this.body[key] = ""; // Se o que estiver na chave for diferente de string, a tribua vazio a ela
+      }
+
+      //Garantir que será eviado apenas o e-mail e senha no body
+      this.body = {
+        email: this.body.email,
+        password: this.body.password,
+      };
+    }
+  }
 }
 
 module.exports = Login;
