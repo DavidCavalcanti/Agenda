@@ -16,10 +16,16 @@ class Login {
     this.erros = [];
     this.user = null;
   }
-  
-  register() {
+
+  async register() {
     this.valida();
+    if (this.erros.length > 0) return; // Se o array erros for maior que 0 existe erro.
+    try {
+      this.user = await LoginModel.create(this.body);
+    } catch (e) {
+      console.log(e);
+    }
   }
-}
+  }
 
 module.exports = Login;
