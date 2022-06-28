@@ -26,6 +26,20 @@ class Login {
       console.log(e);
     }
   }
+
+  valida() {
+    this.CleanUp();
+
+    //O e-mail precisa ser válido
+    if (!validator.isEmail(this.body.email)) this.erros.push("E-mail inválido");
+
+    //A senha precisa ter entre 8 e 12 caracteres
+    if (this.body.password.length < 3 || this.body.password.length > 12) {
+      this.erros.push(
+        "A senha precisa ter no mínimo 8 e no máximo 12 caracteres"
+      );
+    }
   }
+}
 
 module.exports = Login;
